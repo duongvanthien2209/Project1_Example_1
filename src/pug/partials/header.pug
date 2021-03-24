@@ -1,0 +1,226 @@
+header 
+  section.top-header
+    .container
+      .row
+        .d-none.d-md-block.col-md-3.mr-md-auto
+          ul.socials.d-flex
+            li.socials__item.active
+              a.d-flex-center(href="#")
+                i.fab.fa-facebook-f 
+            li.socials__item.border-right
+              a.d-flex-center(href="#") 
+                i.fab.fa-google-plus-g
+            li.socials__item.border-right
+              a.d-flex-center(href="#") 
+                i.fab.fa-instagram
+            li.socials__item.border-right
+              a.d-flex-center(href="#") 
+                i.fab.fa-twitter
+        .col-12.col-sm-4.col-lg-3
+          .top-header__btns.h-100
+            a.btn.d-flex-center.border.border-top-0.border-bottom-0(href="/register.html") Đăng ký 
+            a.btn.d-flex-center.border-right(href="/login.html") Đăng nhập
+  
+  section.main-header
+    .container
+      .d-flex.flex-column.flex-md-row.align-items-center
+        .main-header__brand.mr-md-auto
+          img(src="./assets/images/logo_2.png", alt="")
+            
+        .main-header__content.d-none.d-lg-block
+          span Hotline:
+          p.mb-0 (04) 9500 9650 - (04) 9500 8850
+            
+        .main-header__content.d-none.d-lg-block
+          span Đặt hàng nhanh: 
+          p.mb-0 (04) 9500 9650 - (04) 9500 8850
+        .main-header__search
+          input(id="search" type="text" placeholder="Tìm kiếm...")
+          label(for="search") 
+            i.fas.fa-search
+
+  nav.navbar-header.navbar.navbar-expand-lg.navbar-dark
+    .container(style="position: relative;")
+      button.navbar-header__toggle.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        //- span.navbar-toggler-icon
+        span.bar 
+        span.bar 
+        span.bar    
+
+      - 
+        var cart = [
+          { img: './assets/images/products/1.png', name: 'Máy khoan black decker', gia: '1.250.000' },
+          { img: './assets/images/products/2.png', name: 'Máy khoan black decker', gia: '1.250.000' },
+          { img: './assets/images/products/3.png', name: 'Máy khoan black decker', gia: '1.250.000' },
+        ]
+      .dropdown.order-lg-1
+        a.cart.dropdown-toggle(href="#" id="dropdownMenu1" data-toggle="dropdown") 
+          i.fas.fa-shopping-cart.fa-lg
+          span.cart__badge 0
+        .dropdown-menu.dropdown-menu-right.border-0.shadow(aria-labelledby='dropdownMenu1')
+          each cartItem, index in cart
+            div(class= `cart-item${index < cart.length-1 ? ' border-bottom' : ''}`)
+              img(src=cartItem.img, alt="")
+              .cart-item__content.text-center.mx-2
+                p.cart-item__content__title.text-uppercase= cartItem.name
+                p 
+                  | 1 x  
+                  span #{cartItem.gia} Đ
+              a(href="#") 
+                i.far.fa-times-circle 
+          p.cart-total.text-uppercase.text-right
+            | Tổng tiền: 
+            span 4.560.000 Đ
+          .d-flex.justify-content-end.margin-bottom-20px.padding-right-20px
+            a.btn.btn-yellow.rounded-0.text-uppercase(href="/shopping-cart.html") Thanh toán
+
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active.custom-dropdown.custom-dropdown--megamenu
+            a.nav-link(href='/home.html')
+              | Trang chủ 
+              span.sr-only (current)
+            ul.custom-dropdown__sub-menu.d-none.d-xl-block
+              .container.bg-white.shadow-lg.padding-top-30px
+                .row
+                  .col-3.margin-bottom-50px
+                    .main-header__list
+                      h5 
+                        img(src="./assets/images/4-black-squares.svg", alt="")
+                        | Máy khoan đa năng CNC
+                      ul.list-unstyled
+                        li
+                          a(href="#") Máy khoan CNC điện 
+                        li
+                          a(href="#") Máy phay đa năng 3R
+                        li
+                          a(href="#") Máy hàn, cắt kim loại
+                        li
+                          a(href="#") Máy in, phun tích điện
+                        li
+                          a(href="#") Máy ép gỗ chuẩn Nano
+                    .main-header__list
+                      h5 
+                        img(src="./assets/images/4-black-squares.svg", alt="")
+                        | Máy ép nhựa thủ công
+                      ul.list-unstyled
+                        li
+                          a(href="#") Máy khoan CNC điện 
+                        li
+                          a(href="#") Máy phay đa năng 3R
+                        li
+                          a(href="#") Máy hàn, cắt kim loại
+                        li.mb-0
+                          a(href="#") Máy in, phun tích điện
+                  .col-3.margin-bottom-50px 
+                    .main-header__list
+                      h5 
+                        img(src="./assets/images/4-black-squares.svg", alt="")
+                        | Máy cắt Plasmar
+                      ul.list-unstyled
+                        li
+                          a(href="#") Máy khoan CNC điện 
+                        li
+                          a(href="#") Máy phay đa năng 3R
+                        li
+                          a(href="#") Máy hàn, cắt kim loại
+                        li
+                          a(href="#") Máy in, phun tích điện
+                        li
+                          a(href="#") Máy ép gỗ chuẩn Nano
+                    .main-header__list
+                      h5 
+                        img(src="./assets/images/4-black-squares.svg", alt="")
+                        | Máy uốn tôn điện
+                      ul.list-unstyled
+                        li
+                          a(href="#") Máy khoan CNC điện 
+                        li
+                          a(href="#") Máy phay đa năng 3R
+                        li
+                          a(href="#") Máy hàn, cắt kim loại
+                        li.mb-0
+                          a(href="#") Máy in, phun tích điện
+                  .col-3.margin-bottom-50px 
+                    .main-header__list
+                      h5 
+                        img(src="./assets/images/4-black-squares.svg", alt="")
+                        | Máy phay công nghệ
+                      ul.list-unstyled
+                        li
+                          a(href="#") Máy khoan CNC điện 
+                        li
+                          a(href="#") Máy phay đa năng 3R
+                        li
+                          a(href="#") Máy hàn, cắt kim loại
+                        li
+                          a(href="#") Máy in, phun tích điện
+                        li
+                          a(href="#") Máy ép gỗ chuẩn Nano
+                    .main-header__list
+                      h5 
+                        img(src="./assets/images/4-black-squares.svg", alt="")
+                        | Máy nén khí CNC
+                      ul.list-unstyled
+                        li
+                          a(href="#") Máy khoan CNC điện 
+                        li
+                          a(href="#") Máy phay đa năng 3R
+                        li
+                          a(href="#") Máy hàn, cắt kim loại
+                        li.mb-0
+                          a(href="#") Máy in, phun tích điện
+                  .col-3.padding-bottom-50px  
+                      img.h-100(src="./assets/images/1.png", alt="")
+          li.nav-item.custom-dropdown
+            a.nav-link(href='#') Giới thiệu
+            ul.custom-dropdown__sub-menu.shadow-lg
+              li.custom-dropdown__sub-menu__item
+                a(href="#")
+                  span.mr-2
+                    i.fas.fa-caret-right 
+                  | Giới thiệu chung
+              li.custom-dropdown__sub-menu__item.custom-dropdown
+                a(href="#")
+                  span.mr-2
+                    i.fas.fa-caret-right
+                  | Hệ thống cửa hàng
+                ul.custom-dropdown__sub-menu.custom-dropdown__sub-menu--left.shadow-lg
+                  li.custom-dropdown__sub-menu__item
+                    a(href="#")
+                      span.mr-2
+                        i.fas.fa-caret-right 
+                      | Hệ thống cửa hàng A
+                  li.custom-dropdown__sub-menu__item
+                    a(href="#")
+                      span.mr-2
+                        i.fas.fa-caret-right 
+                      | Hệ thống cửa hàng A1
+                  li.custom-dropdown__sub-menu__item
+                    a(href="#")
+                      span.mr-2
+                        i.fas.fa-caret-right 
+                      | Hệ thống cửa hàng A2
+                  li.custom-dropdown__sub-menu__item
+                    a(href="#")
+                      span.mr-2
+                        i.fas.fa-caret-right 
+                      | Hệ thống cửa hàng A3
+              li.custom-dropdown__sub-menu__item
+                a(href="#")
+                  span.mr-2
+                    i.fas.fa-caret-right
+                  | Chính sách ưu đãi
+              li.custom-dropdown__sub-menu__item
+                a(href="#") 
+                  span.mr-2 
+                    i.fas.fa-caret-right
+                  | Thông tin tuyền dụng
+          li.nav-item
+            a.nav-link(href='/product.html') Sản phẩm
+          li.nav-item
+            a.nav-link(href='/blog.html') Tin khuyến mãi
+          li.nav-item
+            a.nav-link(href='#') Dịch vụ
+          li.nav-item
+            a.nav-link(href='#') Liên hệ

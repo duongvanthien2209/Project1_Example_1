@@ -1,0 +1,19 @@
+@import './base/mixin';
+@import './base/placeholder';
+@import './base/variables';
+@import './base/global';
+@import './base/pugMixin';
+
+// Layouts
+@import './components/header';
+@import './components/footer';
+
+// Pages
+@import './pages/home.scss';
+@import './pages/404.scss';
+@import './pages/register.scss';
+@import './pages/login.scss';
+@import './pages/product.scss';
+@import './pages/product-detail.scss';
+@import './pages/blog-detail.scss';
+@import './pages/shopping-cart.scss';
